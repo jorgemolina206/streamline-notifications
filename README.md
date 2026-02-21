@@ -29,23 +29,18 @@ This project demonstrates backend API development with Python/Flask, relational 
 
 ## Run Locally
 
-### 1) Create and activate virtual environment
+1) Create and activate virtual environment
+
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 
 2) Install dependencies
 
-Bash
-
-
 pip install -r requirements.txt
 
 3) Run the server
 
-Bash
-
-
 python run.py
 
 ───
@@ -66,27 +61,18 @@ Example Flow
 
 1) Create user
 
-Bash
-
-
 curl -X POST http://127.0.0.1:5000/api/users \
 -H "Content-Type: application/json" \
 -d '{"email":"test@example.com"}'
 
 2) Set preferences
 
-Bash
-
-
 curl -X PUT http://127.0.0.1:5000/api/users/1/preferences \
 -H "Content-Type: application/json" \
 -d '{"email_enabled":true,"push_enabled":false,"quiet_hours_start":22,"quiet_hours_end":7}'
 
 3) Post event
 
-Bash
-
-
 curl -X POST http://127.0.0.1:5000/api/events \
 -H "Content-Type: application/json" \
 -d '{"user_id":1,"event_type":"stream_live","payload":{"channel":"MyChannel"}}'
@@ -94,17 +80,12 @@ curl -X POST http://127.0.0.1:5000/api/events \
 4) List notifications
 
 Bash
-
-
 curl http://127.0.0.1:5000/api/users/1/notifications
 
 ───
 
 Run Tests
 
-copy
-
-
 pytest
 
 ───
